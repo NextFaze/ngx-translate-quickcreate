@@ -11,7 +11,7 @@
   "categories": ["Formatters", "Other"],
   "repository": {
     "type": "git",
-    "url": "git@gitlab.nextfaze.com:cfroese/ngx-translate-quickcreate.git"
+    "url": "git@github.com:NextFaze/ngx-translate-quickcreate.git"
   },
   "keywords": ["ngx-translate", "translate", "translations", "angular"],
   "author": "Caleb Froese <cfroese@nextfaze.com>",
