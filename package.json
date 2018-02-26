@@ -1,19 +1,24 @@
 {
-  "name": "@nextfaze/ngx-translate-quickcreate",
+  "name": "ngx-translate-quickcreate",
+  "displayName": "ngx-translate Quick Create",
   "description": "Create ngx-translate strings easily",
   "version": "1.0.0",
   "publisher": "nextfaze",
+  "icon": "icon.png",
   "engines": {
     "vscode": "^1.20.0"
   },
-  "categories": ["Other"],
+  "categories": ["Formatters", "Other"],
+  "keywords": ["ngx-translate", "translate", "translations", "angular"],
+  "author": "Caleb Froese <cfroese@nextfaze.com>",
   "activationEvents": ["onCommand:extension.generateTranslationString"],
   "main": "./out/extension",
   "contributes": {
     "commands": [
       {
         "command": "extension.generateTranslationString",
-        "title": "Generate Translation String"
+        "title": "Generate Translation String",
+        "category": "Translate"
       }
     ],
     "configuration": {

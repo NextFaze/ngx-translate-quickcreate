@@ -23,7 +23,13 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.window.showInformationMessage('Select text to translate');
         return;
       }
-      let input = (await vscode.window.showInputBox()) || selectedText;
+      let input =
+        (await vscode.window.showInputBox({
+          prompt:
+            'Enter a key for this translation or leave blank to use value',
+          placeHolder:
+            'e.g. "hello world" will generate a key named "HELLO_WORLD"',
+        })) || selectedText;
       const key = input.toUpperCase().replace(' ', '_');
       // Generate a json key/value pair
       const value = `"${key}": "${selectedText}"`;
