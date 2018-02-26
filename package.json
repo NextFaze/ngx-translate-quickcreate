@@ -2,7 +2,7 @@
   "name": "ngx-translate-quickcreate",
   "displayName": "ngx-translate Quick Create",
   "description": "Create ngx-translate strings easily",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "nextfaze",
   "icon": "icon.png",
   "engines": {

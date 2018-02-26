@@ -2,7 +2,7 @@
 
 ## Quickly and easily turn hard coded strings into ngx-translate pipes
 
-<img src="sample.gif"/>
+<img src="https://raw.githubusercontent.com/NextFaze/ngx-translate-quickcreate/develop/sample.gif"/>
 
 This project contains VSCode extension `ngx-translate-quickcreate`.
 
@@ -31,12 +31,21 @@ Turns your selected text into a ngx-translate string and pipe.
 
 This extension contributes the following settings:
 
+* `ngx-translate-quickcreate.autocapitalize`: Automatically capitalize the translation string key - only applies in snake case mode.
+* `ngx-translate-quickcreate.caseMode`: Type of case to use for translation string - options are 'camel' and 'snake'.
 * `ngx-translate-quickcreate.replaceOnTranslate`: Replace the selected text after generating a translation string.
 * `ngx-translate-quickcreate.translatePipeName`: The name of the pipe to handle the translation.
 * `ngx-translate-quickcreate.quote`: Which quote to use around the inserted translation key.
 * `ngx-translate-quickcreate.padding`: Add spaces inside the curly bracket pair.
 
 ## Release Notes
+
+### 1.0.1
+
+* Added setting to use camel or snake case
+* Added setting for capitalization
+* Fixed using only workspace settings
+* Fixed only the first space being underscored
 
 ### 1.0.0
 
