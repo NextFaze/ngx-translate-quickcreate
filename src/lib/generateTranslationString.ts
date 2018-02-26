@@ -3,7 +3,7 @@ import * as vscode from 'vscode';
 
 export async function generateTranslationString() {
   const settings = vscode.workspace.getConfiguration(
-    'ngx-translate-quickcreate',
+    'ngx-translate-quickcreate'
   );
 
   // Get the active editor window
@@ -21,9 +21,9 @@ export async function generateTranslationString() {
   let input =
     (await vscode.window.showInputBox({
       prompt: 'Enter a key for this translation or leave blank to use value',
-      placeHolder: 'e.g. "hello world" will generate a key named "HELLO_WORLD"',
+      placeHolder: 'e.g. "hello world" will generate a key named "HELLO_WORLD"'
     })) || selectedText;
-  const key = input.toUpperCase().replace(' ', '_');
+  const key = getTranslationKeyFromString(input);
   // Generate a json key/value pair
   const value = `"${key}": "${selectedText}"`;
   // Copy the translation json to the clipboard
@@ -40,4 +40,8 @@ export async function generateTranslationString() {
       builder.replace(editor.selection, translation);
     });
   }
+}
+
+export function getTranslationKeyFromString(input: string) {
+  return input.toUpperCase().replace(/ /g, '_');
 }

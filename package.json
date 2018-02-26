@@ -29,6 +29,11 @@
       "type": "string",
       "title": "ngx-translate-quickcreate configuration",
       "properties": {
+        "ngx-translate-quickcreate.autocapitalize": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically capitalize the translation string key."
+        },
         "ngx-translate-quickcreate.replaceOnTranslate": {
           "type": "boolean",
           "default": true,
