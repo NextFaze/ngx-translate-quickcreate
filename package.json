@@ -32,7 +32,14 @@
         "ngx-translate-quickcreate.autocapitalize": {
           "type": "boolean",
           "default": true,
-          "description": "Automatically capitalize the translation string key."
+          "description":
+            "Automatically capitalize the translation string key - only applies in snake case mode."
+        },
+        "ngx-translate-quickcreate.caseMode": {
+          "type": "string",
+          "default": "snake",
+          "description":
+            "Type of case to use for translation string - options are 'camel' and 'snake'."
         },
         "ngx-translate-quickcreate.replaceOnTranslate": {
           "type": "boolean",

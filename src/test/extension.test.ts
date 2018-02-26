@@ -20,5 +20,23 @@ suite('Translation Key', () => {
       getTranslationKeyFromString('THIS IS A TEST'),
       'THIS_IS_A_TEST'
     );
+    assert.equal(
+      getTranslationKeyFromString('this is a test'),
+      'THIS_IS_A_TEST'
+    );
+  });
+
+  test('Supports disabling autocapitalize', () => {
+    assert.equal(
+      getTranslationKeyFromString('this is a test', 'snake', false),
+      'this_is_a_test'
+    );
+  });
+
+  test('Supports camel case', () => {
+    assert.equal(
+      getTranslationKeyFromString('This is a test', 'camel', false),
+      'thisIsATest'
+    );
   });
 });

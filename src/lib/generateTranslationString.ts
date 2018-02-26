@@ -2,9 +2,7 @@ import * as copypaste from 'copy-paste';
 import * as vscode from 'vscode';
 
 export async function generateTranslationString() {
-  const settings = vscode.workspace.getConfiguration(
-    'ngx-translate-quickcreate'
-  );
+  const settings = getCurrentVscodeSettings();
 
   // Get the active editor window
   const editor = vscode.window.activeTextEditor;
@@ -23,7 +21,11 @@ export async function generateTranslationString() {
       prompt: 'Enter a key for this translation or leave blank to use value',
       placeHolder: 'e.g. "hello world" will generate a key named "HELLO_WORLD"'
     })) || selectedText;
-  const key = getTranslationKeyFromString(input);
+  const key = getTranslationKeyFromString(
+    input,
+    settings.get('caseMode'),
+    settings.get('autocapitalize')
+  );
   // Generate a json key/value pair
   const value = `"${key}": "${selectedText}"`;
   // Copy the translation json to the clipboard
@@ -42,6 +44,30 @@ export async function generateTranslationString() {
   }
 }
 
-export function getTranslationKeyFromString(input: string) {
-  return input.toUpperCase().replace(/ /g, '_');
+export function getTranslationKeyFromString(
+  input: string,
+  caseMode: string = 'snake',
+  autocapitalize: boolean = true
+) {
+  if (caseMode === 'camel') {
+    return camelize(input);
+  } else if (caseMode === 'snake') {
+    if (autocapitalize) {
+      return input.toUpperCase().replace(/ /g, '_');
+    } else {
+      return input.replace(/ /g, '_');
+    }
+  }
+}
+
+export function camelize(str: string) {
+  return str
+    .replace(/(?:^\w|[A-Z]|\b\w)/g, function(letter, index) {
+      return index === 0 ? letter.toLowerCase() : letter.toUpperCase();
+    })
+    .replace(/\s+/g, '');
+}
+
+export function getCurrentVscodeSettings() {
+  return vscode.workspace.getConfiguration('ngx-translate-quickcreate');
 }
