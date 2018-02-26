@@ -14,23 +14,22 @@ export function activate(context: vscode.ExtensionContext) {
         return;
       }
       // Fetch the selected text
-      const selection = editor.document.getText(editor.selection);
-      if (!selection) {
+      const selectedText = editor.document.getText(editor.selection);
+      if (!selectedText) {
         vscode.window.showInformationMessage('Select text to translate');
         return;
       }
-      let key = await vscode.window.showInputBox();
-      if (!key) {
-        return;
-      }
-      // Uppercase the key
-      key = key.toUpperCase();
-      // Replace the spaces with underscores
-      key = key.replace(' ', '_');
+      let input = (await vscode.window.showInputBox()) || selectedText;
+      const key = input.toUpperCase().replace(' ', '_');
       // Generate a json key/value pair
-      const value = `"${key}": "${selection}"`;
+      const value = `"${key}": "${selectedText}"`;
       // Copy the translation json to the clipboard
       copypaste.copy(value);
+      // Replace the selection text with the translated key
+      const translation = `{{ ${key} | translate }}`;
+      editor.edit(builder => {
+        builder.replace(editor.selection, translation);
+      });
     },
   );
   context.subscriptions.push(disposable);
