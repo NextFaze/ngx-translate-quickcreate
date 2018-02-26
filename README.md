@@ -39,3 +39,8 @@ This extension contributes the following settings:
 ### 1.0.0
 
 Initial release of `ngx-translate-quickcreate`
+
+## Contributing
+
+Contributions are welcome. After updating the version, run `npm run package` to create a `.vsix` file to upload.
+See Microsofts guide on [publishing extensions](https://code.visualstudio.com/docs/extensions/publish-extension).
