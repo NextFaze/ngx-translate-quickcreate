@@ -1,6 +1,7 @@
 'use strict';
 
 import * as vscode from 'vscode';
+import * as copypaste from 'copy-paste';
 
 export function activate(context: vscode.ExtensionContext) {
   let disposable = vscode.commands.registerCommand(
@@ -26,7 +27,10 @@ export function activate(context: vscode.ExtensionContext) {
       key = key.toUpperCase();
       // Replace the spaces with underscores
       key = key.replace(' ', '_');
-      console.log(key);
+      // Generate a json key/value pair
+      const value = `"${key}": "${selection}"`;
+      // Copy the translation json to the clipboard
+      copypaste.copy(value);
     },
   );
   context.subscriptions.push(disposable);
