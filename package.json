@@ -15,7 +15,35 @@
         "command": "extension.generateTranslationString",
         "title": "Generate Translation String"
       }
-    ]
+    ],
+    "configuration": {
+      "type": "string",
+      "title": "ngx-translate-quickcreate configuration",
+      "properties": {
+        "ngx-translate-quickcreate.replaceOnTranslate": {
+          "type": "boolean",
+          "default": true,
+          "description":
+            "Replace the selected text after generating a translation string."
+        },
+        "ngx-translate-quickcreate.translatePipeName": {
+          "type": "string",
+          "default": "translate",
+          "description": "The name of the pipe to handle the translation."
+        },
+        "ngx-translate-quickcreate.quote": {
+          "type": "string",
+          "default": "'",
+          "description":
+            "Which quote to use around the inserted translation key."
+        },
+        "ngx-translate-quickcreate.padding": {
+          "type": "boolean",
+          "default": true,
+          "description": "Add spaces inside the curly bracket pair."
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
