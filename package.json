@@ -9,6 +9,10 @@
     "vscode": "^1.20.0"
   },
   "categories": ["Formatters", "Other"],
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.nextfaze.com:cfroese/ngx-translate-quickcreate.git"
+  },
   "keywords": ["ngx-translate", "translate", "translations", "angular"],
   "author": "Caleb Froese <cfroese@nextfaze.com>",
   "activationEvents": ["onCommand:extension.generateTranslationString"],
@@ -55,7 +59,8 @@
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "postinstall": "node ./node_modules/vscode/bin/install",
-    "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    "test": "npm run compile && node ./node_modules/vscode/bin/test",
+    "package": "vsce package"
   },
   "devDependencies": {
     "@types/copy-paste": "^1.1.30",
@@ -63,6 +68,7 @@
     "@types/node": "^7.0.43",
     "tslint": "^5.8.0",
     "typescript": "^2.6.1",
+    "vsce": "^1.37.1",
     "vscode": "^1.1.6"
   },
   "dependencies": {
