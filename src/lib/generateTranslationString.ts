@@ -24,12 +24,13 @@ export async function generateTranslationString() {
   const key = getTranslationKeyFromString(
     input,
     settings.get('caseMode'),
-    settings.get('autocapitalize')
+    settings.get('autocapitalize'),
+    settings.get('addTrailingComma'),
   );
   // Generate a json key/value pair
   const value = `"${key}": "${selectedText}"`;
   // Copy the translation json to the clipboard
-  copypaste.copy(value);
+  copypaste.copy(value + ",");
 
   if (settings.get('replaceOnTranslate')) {
     // Replace the selection text with the translated key
@@ -47,8 +48,12 @@ export async function generateTranslationString() {
 export function getTranslationKeyFromString(
   input: string,
   caseMode: string = 'snake',
-  autocapitalize: boolean = true
+  autocapitalize: boolean = true,
+  addTrailingComma: boolean = true,
 ) {
+  if (addTrailingComma){
+    input = input + ",";
+  }
   if (caseMode === 'camel') {
     return camelize(input);
   } else if (caseMode === 'snake') {
