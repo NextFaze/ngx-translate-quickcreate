@@ -46,8 +46,8 @@ export async function generateTranslationString() {
 
 export function getTranslationKeyFromString(
   input: string,
-  caseMode: string = 'snake',
-  autocapitalize: boolean = true
+  caseMode?: string,
+  autocapitalize?: boolean
 ) {
   if (caseMode === 'camel') {
     return camelize(input);
@@ -57,6 +57,8 @@ export function getTranslationKeyFromString(
     } else {
       return input.replace(/ /g, '_');
     }
+  } else {
+    return input;
   }
 }
 

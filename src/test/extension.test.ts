@@ -39,4 +39,11 @@ suite('Translation Key', () => {
       'thisIsATest'
     );
   });
+
+  test('Supports no transformation', () => {
+    assert.equal(
+      getTranslationKeyFromString('This is a test'),
+      'This is a test'
+    );
+  });
 });
