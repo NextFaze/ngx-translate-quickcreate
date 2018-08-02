@@ -8,14 +8,24 @@
   "engines": {
     "vscode": "^1.20.0"
   },
-  "categories": ["Formatters", "Other"],
+  "categories": [
+    "Formatters",
+    "Other"
+  ],
   "repository": {
     "type": "git",
     "url": "git@github.com:NextFaze/ngx-translate-quickcreate.git"
   },
-  "keywords": ["ngx-translate", "translate", "translations", "angular"],
+  "keywords": [
+    "ngx-translate",
+    "translate",
+    "translations",
+    "angular"
+  ],
   "author": "Caleb Froese <cfroese@nextfaze.com>",
-  "activationEvents": ["onCommand:extension.generateTranslationString"],
+  "activationEvents": [
+    "onCommand:extension.generateTranslationString"
+  ],
   "main": "./out/extension",
   "contributes": {
     "commands": [
@@ -31,21 +41,16 @@
       "properties": {
         "ngx-translate-quickcreate.autocapitalize": {
           "type": "boolean",
-          "default": true,
-          "description":
-            "Automatically capitalize the translation string key - only applies in snake case mode."
+          "description": "Automatically capitalize the translation string key - only applies in snake case mode."
         },
         "ngx-translate-quickcreate.caseMode": {
           "type": "string",
-          "default": "snake",
-          "description":
-            "Type of case to use for translation string - options are 'camel' and 'snake'."
+          "description": "Type of case to use for translation string - options are 'camel' and 'snake'."
         },
         "ngx-translate-quickcreate.replaceOnTranslate": {
           "type": "boolean",
           "default": true,
-          "description":
-            "Replace the selected text after generating a translation string."
+          "description": "Replace the selected text after generating a translation string."
         },
         "ngx-translate-quickcreate.translatePipeName": {
           "type": "string",
@@ -55,8 +60,7 @@
         "ngx-translate-quickcreate.quote": {
           "type": "string",
           "default": "'",
-          "description":
-            "Which quote to use around the inserted translation key."
+          "description": "Which quote to use around the inserted translation key."
         },
         "ngx-translate-quickcreate.padding": {
           "type": "boolean",
