@@ -46,7 +46,7 @@ export async function generateTranslationString() {
       obj[key!] = selectedText;
       jsonfile.writeFileSync(fileSource, obj);
   
-      const toObj = jsonfile.readFileSync(fileSource);
+      const toObj = jsonfile.readFileSync(fileTo);
       toObj[key!] = selectedText;
       jsonfile.writeFileSync(fileTo, toObj);
       // Open the transilation file and select the word and select the word
