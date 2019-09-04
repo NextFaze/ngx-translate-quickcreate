@@ -52,7 +52,7 @@ export async function generateTranslationString() {
       // Open the transilation file and select the word and select the word
       var openPath = vscode.Uri.file(path.resolve('./'+fileTo));
       vscode.workspace.openTextDocument(openPath).then(doc => {
-        const colPos = JSON.stringify(obj).indexOf(selectedText);
+        const colPos = JSON.stringify(toObj).indexOf(selectedText);
         vscode.window.showTextDocument(doc, {
           selection:
             new Range(
