@@ -30,13 +30,14 @@ export async function generateTranslationString() {
   // Generate a json key/value pair
   const value = `"${key}": "${selectedText}"`;
   // Copy the translation json to the clipboard
-  copypaste.copy(value);
-  
+  if (settings.get('autoFileModify')) {
+
+    copypaste.copy(value);
+  }
   if(settings.get('autoFileModify')){
     
     const jsonfile = require('jsonfile');
-    // should be used from the config of the extension!
-    // settings.get('languageFrom')
+    // Directories of the transilation files
     const fileSource =  settings.get('transilationDirectory')+String(settings.get('languageFrom'))+'.json';
     const fileTo =      settings.get('transilationDirectory')+String(settings.get('languageTo'))+'.json';
   
