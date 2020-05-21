@@ -35,6 +35,16 @@
         "command": "extension.generateTranslationString",
         "title": "Generate Translation String",
         "category": "Translate"
+      },
+      {
+        "command": "extension.generateTranslationStringCodeOnly",
+        "title": "Generate Translation String from code file (angular component only)",
+        "category": "CTranslate"
+      },
+      {
+        "command": "extension.generateStringOnly",
+        "title": "Generate Translation String Without Replacement of selection",
+        "category": "Translate (No Replacement)"
       }
     ],
     "configuration": {
