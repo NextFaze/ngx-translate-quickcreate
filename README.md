@@ -40,7 +40,7 @@ This extension contributes the following settings:
 * `ngx-translate-quickcreate.autoFileModify`: Enables to automatically modifies transilation files that are specified in the extension settings.
 * `ngx-translate-quickcreate.transilationDirectory`: Specifies the directory from which the transilations are located in.
 * `ngx-translate-quickcreate.languageFrom`: The source language to be translated from.
-* `ngx-translate-quickcreate.languageTo`: The source language to be translated to.
+* `ngx-translate-quickcreate.languageTo`: The source language to be translated to (Now supports multi languages by passing ar,en,es).
 
 ## Release Notes
 
