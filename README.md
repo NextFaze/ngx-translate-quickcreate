@@ -37,8 +37,16 @@ This extension contributes the following settings:
 * `ngx-translate-quickcreate.translatePipeName`: The name of the pipe to handle the translation.
 * `ngx-translate-quickcreate.quote`: Which quote to use around the inserted translation key.
 * `ngx-translate-quickcreate.padding`: Add spaces inside the curly bracket pair.
+* `ngx-translate-quickcreate.autoFileModify`: Enables to automatically modifies transilation files that are specified in the extension settings.
+* `ngx-translate-quickcreate.transilationDirectory`: Specifies the directory from which the transilations are located in.
+* `ngx-translate-quickcreate.languageFrom`: The source language to be translated from.
+* `ngx-translate-quickcreate.languageTo`: The source language to be translated to (Now supports multi languages by passing ar,en,es).
 
 ## Release Notes
+
+### 1.0.2
+
+* Added extra settings for automatically insert selected strings as key : pairs directly to the transilation files.
 
 ### 1.0.1
 
